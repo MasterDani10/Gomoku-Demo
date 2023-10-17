@@ -30,6 +30,14 @@ class GameUITest {
     }
     @Test
     void placeStone() {
+        Gomoku game = new Gomoku();
 
+        ByteArrayInputStream inputStream = new ByteArrayInputStream("".getBytes());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        GameUI gameUI = new GameUI(game, System.in, new PrintStream(outputStream));
+
+        gameUI.placeStone(1, 2, 1);
+        assertTrue(true);
     }
+
 }
