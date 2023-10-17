@@ -1,5 +1,5 @@
 
-package GomokuGame;
+package GomokuGame.game;
 
 import java.util.Objects;
 

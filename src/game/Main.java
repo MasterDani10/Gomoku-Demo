@@ -1,6 +1,8 @@
+package GomokuGame.game;
+
 public class Main {
     public static void main(String[] args){
-        GomokuGame.Gomoku game = new GomokuGame.Gomoku();
+        Gomoku game = new Gomoku();
         game.startGame();
     }
 }

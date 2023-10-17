@@ -1,4 +1,4 @@
-package GomokuGame;
+package GomokuGame.game;
 
 import java.awt.*;
 

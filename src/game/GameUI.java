@@ -1,36 +1,41 @@
-package GomokuGame;
+package GomokuGame.game;
+
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 public class GameUI{
 
     private final Gomoku game;
     private final Scanner input;
+    private final PrintStream output;
 
-    public GameUI(Gomoku game){
+    public GameUI(Gomoku game, InputStream inputStream, PrintStream outputStream){
         this.game = game;
-        this.input = new Scanner(System.in);
+        this.input = new Scanner(inputStream);
+        this.output = outputStream;
     }
     public void welcomeUser(){
-        System.out.println("Welcome to Gomoku / Omok");
+        output.print("Welcome to Gomoku / Omok");
     }
     public int promptForGameMode(){
         boolean repeat = true;
         int choice;
-        System.out.println("Select a game mode: ");
-        System.out.println("(1) Human");
-        System.out.println("(2) Strategy");
+        output.println("Select a game mode: ");
+        output.println("(1) Human");
+        output.println("(2) Strategy");
         choice = input.nextInt();
-        System.out.println();
+        output.println();
 
         if(choice == 1 || choice == 2){
             repeat = false;
         }
 
         while(repeat) {
-            System.out.println("Sorry, please enter 1 or 2 to Select a game mode: ");
-            System.out.println("(1) Human");
-            System.out.println("(2) Strategy");
+            output.println("Sorry, please enter 1 or 2 to Select a game mode: ");
+            output.println("(1) Human");
+            output.println("(2) Strategy");
             choice = input.nextInt();
-            System.out.println();
+            output.println();
             if(choice == 1 || choice == 2){
                 repeat = false;
             }
@@ -46,13 +51,14 @@ public class GameUI{
 //                return GameType.Strategy();
                 return 2;
             default:
-                System.out.println("Invalid choice, going to Human mode");
+                output.println("Invalid choice, going to Human mode");
 //                return GameType.Human();
                 return -1;
         }
     }
 
     public void placeStone(int x, int y, int movePlayer1) {
+
         game.getBoard().createBoard();
     }
 

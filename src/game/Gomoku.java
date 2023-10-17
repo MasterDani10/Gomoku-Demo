@@ -1,20 +1,20 @@
-package GomokuGame;
+package GomokuGame.game;
 
 public class Gomoku {
 
    private Player player1;
    private Player player2;
    private GameType gameType;
-   public Board board = new GomokuGame.Board(15);
+   public Board board = new Board(15);
    int[][] b1 = board.getBoardInfo();
-   private  GameUI gameUI;
+   private GameUI gameUI;
 
    private ComputerOpponent com;
 
    public Gomoku(){
        this.player1 = new Player("Player 1");
        this.player2 = new Player("Player 2");
-       this.gameUI = new GameUI(this);
+       this.gameUI = new GameUI(this, System.in, System.out);
        this.com = new ComputerOpponent();
    }
 
